@@ -1,9 +1,8 @@
 const express = require("express");
 
 const app = express();
-const PORT = mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/contactsDb"
-);
+const PORT = process.env.PORT || 3000;
+
 app.use(express.static("../client/dist"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
